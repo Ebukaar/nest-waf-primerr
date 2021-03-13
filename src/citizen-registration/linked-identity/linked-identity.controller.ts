@@ -1,11 +1,16 @@
-import { Controller, Get, Post, Body, Put, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Put, Param, Delete, Render } from '@nestjs/common';
 import { LinkedIdentityService } from './linked-identity.service';
 import { CreateLinkedIdentityDto } from './dto/create-linked-identity.dto';
 import { UpdateLinkedIdentityDto } from './dto/update-linked-identity.dto';
 
 @Controller('linked-identity')
 export class LinkedIdentityController {
-  constructor(private readonly linkedIdentityService: LinkedIdentityService) {}
+  constructor(private readonly linkedIdentityService: LinkedIdentityService) { }
+
+  @Get('create')
+  @Render('users/create-LinkedIdentity.html')
+  createForm() {
+  }
 
   @Post()
   create(@Body() createLinkedIdentityDto: CreateLinkedIdentityDto) {

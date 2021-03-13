@@ -5,8 +5,16 @@ import { UpdateBioDatumDto } from './dto/update-bio-datum.dto';
 
 @Controller('bio-data')
 export class BioDataController {
-  constructor(private readonly bioDataService: BioDataService) {}
+  constructor(private readonly bioDataService: BioDataService) { }
 
+  @Get('create')
+  @Render('users/create-bio-data.html')
+  createForm() {
+  }
+
+  
+
+  
   @Post()
   create(@Body() createBioDatumDto: CreateBioDatumDto) {
     return this.bioDataService.create(createBioDatumDto);
@@ -32,8 +40,5 @@ export class BioDataController {
     return this.bioDataService.remove(+id);
   }
 
-  @Get('create')
-@Render('views/users/create-bio-data.html')
-createForm() {
-  }
+
 }

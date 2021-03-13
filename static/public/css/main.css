@@ -11,7 +11,7 @@
     padding: 10px 15px 10px 20px;
 }
 .navigation-bar {
-    background-color: blue;
+    background-color: green;
     color: white;
     display: flex;
     flex-direction: column-reverse;
@@ -33,11 +33,12 @@
 
 .content-with-background-image{
     
-    background-image: url(/public/img/image4.jpg);
-    background-attachment: fixed;
-    background-size: auto 1200px;
+    background-image: url(/public/img/image5.png);
+    background-attachment: scroll;
+    background-size: cover;
     background-repeat: no-repeat;
-    
+    text-align: center;
+    color: #111;
     height: 500px;
     font-size: 2em;
     border: 1px solid #eeeeee;
@@ -45,7 +46,9 @@
     /*margin: 10px;*/
     
     
+    
 }
+
 
 .content-with-background-image2{
     
@@ -97,6 +100,7 @@ html{
 
 .grid-item-row-2{
     grid-area: bg-image1;
+    
 }
 
 .grid-item-col-1-row-3{

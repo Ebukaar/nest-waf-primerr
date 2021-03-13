@@ -1,4 +1,6 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+
+import { Column, Entity, PrimaryGeneratedColumn,OneToOne } from "typeorm";
+import {LinkedIdentity} from "../../linked-identity/entities/linked-identity.entity";
 
 @Entity()
 export class BioDatum {
@@ -37,4 +39,7 @@ export class BioDatum {
   
     @Column({ default: true })
     isActive: boolean;
+
+    @OneToOne(type => LinkedIdentity, LinkedIdentity => LinkedIdentity.BioDatum)
+    LinkedIdentity: LinkedIdentity;
 }
